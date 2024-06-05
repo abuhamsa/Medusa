@@ -1368,7 +1368,7 @@ definitions:
         type: array
         description:
           Array of objects with a mapping of indexer numbering to scene numbering. Available through the detailed query param.
-          Mappings are pulled from TheXem.de.
+          Mappings are pulled from thexem.info.
         items:
           $ref: '#/definitions/episodeMapping'
       sceneAbsoluteNumbering:
@@ -1390,7 +1390,7 @@ definitions:
         type: array
         description:
           Array of manually configured episode mappings of absolute to scene absolute numbering.
-          Mappings are pulled from TheXem.de.
+          Mappings are pulled from thexem.info.
         items:
           type: object
           properties:

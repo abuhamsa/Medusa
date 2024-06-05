@@ -971,7 +971,7 @@ export default {
                 }
             }
 
-            // Scene numbering downloaded from thexem.de.
+            // Scene numbering downloaded from thexem.info.
             if (xemNumbering.length !== 0) {
                 const mapped = xemNumbering.filter(x => {
                     return x.source.season === episode.season && x.source.episode === episode.episode;

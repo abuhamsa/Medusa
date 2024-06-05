@@ -348,7 +348,7 @@ def _get_custom_exceptions(force):
 
 def _get_xem_exceptions(force):
     xem_exceptions = defaultdict(dict)
-    url = 'http://thexem.de/map/allNames'
+    url = 'http://thexem.info/map/allNames'
     params = {
         'origin': None,
         'seasonNumbers': 1,
