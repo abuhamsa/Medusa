@@ -47,7 +47,7 @@ session = MedusaSafeSession()
 def update_network_dict():
     """Update timezone information from Medusa repositories."""
     logger.log('Started updating network timezones', logger.DEBUG)
-    url = '{base_url}/sb_network_timezones/network_timezones.txt'.format(base_url=app.BASE_PYMEDUSA_URL)
+    url = '{base_url}/sb_network_timezones/network_timezones.txt'.format(base_url=app.NETWORK_URL)
     response = session.get(url)
     if not response or not response.text:
         logger.log('Updating network timezones failed, this can happen from time to time. URL: %s' % url, logger.INFO)
