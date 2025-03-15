@@ -68,7 +68,7 @@ from medusa.helper.common import (
 from medusa.helper.exceptions import CantUpdateShowException, ShowDirectoryNotFoundException
 from medusa.helpers.quality import get_quality_string
 from medusa.indexers.api import indexerApi
-from medusa.indexers.config import INDEXER_TMDB, INDEXER_TVDBV2, INDEXER_TVMAZE
+from medusa.indexers.config import INDEXER_TMDB, INDEXER_TVDBV2, INDEXER_TVMAZE, INDEXER_GLOTZ
 from medusa.indexers.exceptions import IndexerError, IndexerShowNotFound
 from medusa.logger import LOGGING_LEVELS, filter_logline, read_loglines
 from medusa.logger.adapters.style import BraceAdapter
@@ -102,7 +102,8 @@ INDEXER_IDS = {
     0: 'indexerid',
     INDEXER_TVDBV2: 'tvdbid',
     INDEXER_TVMAZE: 'tvmazeid',
-    INDEXER_TMDB: 'tmdbid'
+    INDEXER_TMDB: 'tmdbid',
+    INDEXER_GLOTZ: 'tvdbid'
 }
 
 # basically everything except RESULT_SUCCESS / success is bad
@@ -2106,7 +2107,8 @@ class CMD_ShowAddNew(ApiCall):
 
     def run(self):
         """ Add a new show to Medusa """
-        show_obj = Show.find_by_id(app.showList, INDEXER_TVDBV2, self.indexerid)
+        #show_obj = Show.find_by_id(app.showList, INDEXER_TVDBV2, self.indexerid)
+        show_obj = Show.find_by_id(app.showList, INDEXER_GLOTZ, self.indexerid)
         if show_obj:
             return _responds(RESULT_FAILURE, msg='An existing indexerid already exists in database')
 
