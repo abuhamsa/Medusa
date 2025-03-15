@@ -1,0 +1,15 @@
+---
+version: "3.4"
+services:
+  medusa:
+    image: medusa:ombi_glotz_api #3oww/medusa
+    container_name: medusa
+    environment:
+      - PUID=99
+      - PGID=100
+      - TZ=Europe/Zurich
+      - NETWORK_URL=https://pymedusanw.blubber.ch
+    ports:
+      - 8881:8081
+    restart: unless-stopped  
+    command: ["sleep", "infinity"]
